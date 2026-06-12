@@ -27,11 +27,11 @@ Chain strategy: stacked-to-main
 
 ## Phase 1: Foundation - API & Errors (Work Unit 1)
 
-- [ ] 1.1 Create `src/mlx_audiocraft/musicgen/__init__.py` exporting package marker.
-- [ ] 1.2 Create `src/mlx_audiocraft/musicgen/errors.py` with `UnsupportedCheckpointError`, `UnsupportedConfigError`, `UnsupportedModelFeatureError`, `IncompatibleCacheError`, `NotYetSupportedError`.
-- [ ] 1.3 Modify `src/mlx_audiocraft/_musicgen.py`: replace placeholder `__init__`/`load` with classmethod `MusicGen.from_pretrained(model_id, cache_dir=None)` returning MLX scaffold; `generate()` raises `NotYetSupportedError`.
-- [ ] 1.4 Create `tests/test_musicgen_loading.py` covering: official id accepted, non-official id raises `UnsupportedCheckpointError`, `generate()` raises `NotYetSupportedError`.
-- [ ] 1.5 Extend `tests/test_import.py` asserting `MusicGen.from_pretrained` is callable.
+- [x] 1.1 Create `src/mlx_audiocraft/musicgen/__init__.py` exporting package marker.
+- [x] 1.2 Create `src/mlx_audiocraft/musicgen/errors.py` with `UnsupportedCheckpointError`, `UnsupportedConfigError`, `UnsupportedModelFeatureError`, `IncompatibleCacheError`, `NotYetSupportedError`.
+- [x] 1.3 Modify `src/mlx_audiocraft/_musicgen.py`: replace placeholder `__init__`/`load` with classmethod `MusicGen.from_pretrained(model_id, cache_dir=None)` returning MLX scaffold; `generate()` raises `NotYetSupportedError`.
+- [x] 1.4 Create `tests/test_musicgen_loading.py` covering: official id accepted, non-official id raises `UnsupportedCheckpointError`, `generate()` raises `NotYetSupportedError`.
+- [x] 1.5 Extend `tests/test_import.py` asserting `MusicGen.from_pretrained` is callable.
 
 ## Phase 2: Checkpoint & Config Resolution (Work Unit 2)
 

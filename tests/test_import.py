@@ -15,3 +15,9 @@ class TestImport:
         from mlx_audiocraft import MusicGen  # noqa: F401
 
         assert MusicGen is not None
+
+    def test_musicgen_from_pretrained_callable(self) -> None:
+        """MusicGen.from_pretrained is exposed and callable."""
+        from mlx_audiocraft import MusicGen
+
+        assert callable(MusicGen.from_pretrained)

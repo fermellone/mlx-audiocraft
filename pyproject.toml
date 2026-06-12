@@ -77,7 +77,12 @@ src = ["src"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "N", "W", "UP", "B", "SIM", "ARG", "C4", "T20"]
-ignore = []
+ignore = [
+    # Keep runtime syntax compatible with Python 3.9 even when using
+    # postponed annotations.
+    "UP007",
+    "UP045",
+]
 
 [tool.ruff.format]
 quote-style = "double"

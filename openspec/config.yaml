@@ -1,0 +1,67 @@
+# openspec/config.yaml
+# Auto-maintained by sdd-init. Update via sdd-init or manual edit.
+schema: spec-driven
+
+context: |
+  Tech stack: Python 3.9+, MLX (Apple Silicon), setuptools, wheel
+  Architecture: MLX-native inference runtime for AudioCraft-family pretrained models (MusicGen first)
+  Testing: pytest 7.0+ (configured, not yet installed — no venv), mypy strict, ruff lint+format
+  Style: PEP 8 with ruff (line-length 100, double quotes), mypy strict mode, py39 target
+  Domain: Audio generation, model weight conversion (PyTorch → MLX), MLX computation on Apple Silicon
+  Status: Pre-alpha — skeleton with placeholder classes only. No real inference implemented.
+
+strict_tdd: false
+
+testing:
+  detected: "2026-06-12"
+  runner:
+    name: pytest
+    command: pytest
+    installed: false          # dep declared in pyproject.toml but no .venv set up
+  layers:
+    unit: true
+    integration: false
+    e2e: false
+  coverage:
+    available: true
+    command: pytest --cov=src/mlx_audiocraft
+  linter:
+    name: ruff
+    command: ruff check src/
+    available: true
+  type_checker:
+    name: mypy
+    command: mypy src/
+    available: true
+  formatter:
+    name: ruff
+    command: ruff format src/
+    available: true
+
+rules:
+  proposal:
+    - Describe the inference feature being added (MusicGen, AudioGen, etc.)
+    - Link to reference PyTorch implementation if applicable
+    - State Apple Silicon / MLX-specific considerations
+  specs:
+    - Use Given/When/Then for scenarios
+    - Include weight loading, model conversion, and audio output scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include architecture comparison with upstream PyTorch model
+    - Document weight conversion strategy
+    - Note MLX-specific optimizations or restrictions
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+    - Separate weight conversion from inference logic
+  apply:
+    - Follow existing code patterns
+    tdd: false
+    test_command: pytest
+  verify:
+    test_command: pytest
+    build_command: pip install -e .
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas

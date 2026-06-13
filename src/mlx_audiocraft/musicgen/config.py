@@ -69,7 +69,7 @@ def parse_xp_cfg(path: Path) -> dict[str, Any]:
     # PyYAML is a runtime dependency for checkpoint config parsing. If the
     # file is not a YAML mapping, use the minimal flat-config parser.
     try:
-        import yaml  # type: ignore[import-untyped]
+        import yaml
 
         parsed = yaml.safe_load(raw_text)
         if isinstance(parsed, dict):

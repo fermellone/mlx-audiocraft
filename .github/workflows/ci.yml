@@ -36,4 +36,5 @@ jobs:
         run: python -m ruff check src/ tests/
 
       - name: Run mypy
-        run: python -m mypy src/
+        if: matrix.python-version != '3.9'
+        run: python -m mypy --strict src/

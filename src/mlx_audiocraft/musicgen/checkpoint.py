@@ -78,7 +78,7 @@ def resolve_artifacts(
         _download = downloader
     else:
         try:
-            from huggingface_hub import hf_hub_download  # type: ignore[import-untyped]
+            from huggingface_hub import hf_hub_download
         except ImportError as err:
             raise RuntimeError(
                 "huggingface_hub is required for artifact resolution. "

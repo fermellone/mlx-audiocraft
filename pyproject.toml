@@ -30,7 +30,9 @@ dependencies = [
     # Core dependency: MLX (Apple Silicon only)
     # mlx will be added when inference implementation begins
     # numpy for array operations
+    "huggingface_hub>=0.20",
     "numpy>=1.23",
+    "PyYAML>=6.0",
 ]
 
 [project.optional-dependencies]

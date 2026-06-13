@@ -35,10 +35,10 @@ Chain strategy: stacked-to-main
 
 ## Phase 2: Checkpoint & Config Resolution (Work Unit 2)
 
-- [ ] 2.1 Create `src/mlx_audiocraft/musicgen/checkpoint.py` with `is_official_musicgen_id()` and `resolve_artifacts(model_id, cache_dir)` returning a `ResolvedCheckpoint` dataclass.
-- [ ] 2.2 Add injectable downloader hook to `resolve_artifacts` so tests stub `hf_hub_download` without network.
-- [ ] 2.3 Create `src/mlx_audiocraft/musicgen/config.py` with `parse_xp_cfg(path)` and `validate_supported(cfg)` raising `UnsupportedConfigError` for unsupported sections.
-- [ ] 2.4 Extend `tests/test_musicgen_loading.py` with resolver + xp.cfg tests using `tmp_path` and the stubbed downloader.
+- [x] 2.1 Create `src/mlx_audiocraft/musicgen/checkpoint.py` with `is_official_musicgen_id()` and `resolve_artifacts(model_id, cache_dir)` returning a `ResolvedCheckpoint` dataclass.
+- [x] 2.2 Add injectable downloader hook to `resolve_artifacts` so tests stub `hf_hub_download` without network.
+- [x] 2.3 Create `src/mlx_audiocraft/musicgen/config.py` with `parse_xp_cfg(path)` and `validate_supported(cfg)` raising `UnsupportedConfigError` for unsupported sections.
+- [x] 2.4 Extend `tests/test_musicgen_loading.py` with resolver + xp.cfg tests using `tmp_path` and the stubbed downloader.
 
 ## Phase 3: Cache & Conversion Scaffold (Work Unit 3)
 
